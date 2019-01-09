@@ -3,18 +3,25 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:r="http://richfaces.org">
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:r="http://richfaces.org/rich">
 
 <body>
     <ui:composition template="/templates/template.xhtml">
 
         <ui:define name="title">RichFaces Sample</ui:define>
-
+        
         <ui:define name="body">
+        <r:panel>
+            <f:facet name="header"><h:outputText value="Iniciando com Richfaces"/></f:facet>
+            teste
+        </r:panel>
+        
+        
             <h:form prependId="false">
                 <h:outputLabel value="Name:" for="nameInput" />
                 <h:inputText id="nameInput" value="#{richBean.name}">
-                    <r:ajax event="keyup" render="output" />
+                    <a4j:ajax event="keyup" render="output" />
                 </h:inputText>
                 <h:panelGroup id="output">
                     <h:outputText value="Hello #{richBean.name}!"
@@ -25,3 +32,4 @@
     </ui:composition>
 </body>
 </html>
+
