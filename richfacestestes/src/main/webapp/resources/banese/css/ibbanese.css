@@ -80,12 +80,34 @@
 .wrapper { overflow:hidden; }
 
 /* Horizontal Menu - Class "nav-l1" */
-.nav-l1 { max-width:1100px; margin-left: 2px; height:26px; margin-bottom:15px; overflow:none; background:transparent url(../images/buttonbar.png) no-repeat left top; }
+.nav-l1 { 
+    max-width:1100px; 
+    margin-left: 2px; 
+    height:26px; 
+    margin-bottom:15px; 
+    overflow:none; 
+    
+    /*
+    background-image: url(../images/backgroundMenuBar.png);
+    background-repeat:repeat-x; 
+    */
+}
+
 .nav-l1 h3 { margin-right:15px; float:right; color:#016838; font-size:1.2em; font-weight:bold; line-height:26px; letter-spacing:-1px; }
-.nav-l1 ul { height:26px; width: 977px; padding-left: 0px; background:transparent url(../images/buttonbar.png) no-repeat right top; }
+.nav-l1 ul { 
+    height:26px; 
+    width: 977px; 
+    padding-left: 0px; 
+    /*background:transparent url(../images/buttonbar.png) no-repeat right top;
+    background-image: url(../images/endMenuBar.png);
+    background-repeat: no-repeat; 
+    background-position: right;     
+    */
+    }
 .nav-l1 ul li { display:inline; color:#6f7272; font-size:0.9em; }
 .nav-l1 ul li a { display:block; float:left; padding:0 18px 0 20px; background:transparent url(../images/buttonbar.png) no-repeat left bottom; color:#6f7272; font:normal 12px/26px Arial, Helvetica, sans-serif; text-decoration:none; }
 .nav-l1 ul li.first a { background-position:0 0; }
+.nav-l1 ul li.last a { background-position:1110 0; }
 .nav-l1 ul li a:hover { background-position:-134px -26px; text-decoration:none; }
 .nav-l1 ul li a:active,
 .nav-l1 ul li.on a { background-position:-134px -52px;}
@@ -512,12 +534,24 @@ th {
 
 .container {
 	display:block;
-	width:1024px;
+	/*width:1024px;*/
 	height:auto;
 	margin:0 auto;
 	margin-bottom:10px;
-	padding:0 20px 10px 20px;
+	/*padding:0 20px 10px 20px;*/
 	text-align:left; /* hack para o IE */
+}
+
+.modulo {
+    display:block;
+    width:1024px;
+    height:auto;
+    margin:0 auto;
+    margin-bottom:10px;
+    padding:0 20px 10px 20px;
+    color:red;
+    text-align:left; /* hack para o IE */
+    
 }
 
 .contato {
@@ -819,7 +853,26 @@ th {
 
 .mainNav {
 	margin: 0px 23px 0px 23px;
+	/*
+    background-image: url(../images/endMenuBar.png);
+    background-repeat: no-repeat; 
+    background-position: right;
+    */
+    background-image: url(../images/backgroundMenuBar.png);
+    background-repeat:repeat-x; 
 }
+
+.containtManu {
+    margin: 0px 0px 0px 0px;
+    /*
+    background-image: url(../images/endMenuBar.png);
+    background-repeat: no-repeat; 
+    background-position: right;
+    */
+    background-image: url(../images/backgroundMenuBar.png);
+    background-repeat:repeat-x; 
+}
+
 
 .menu {
 	float: right;
