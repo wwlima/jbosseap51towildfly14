@@ -1,51 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID"
-         version="3.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
 
-    <display-name>Sample RichFaces 5 Application</display-name>
+	<display-name>Sample RichFaces 5 Application</display-name>
 
-    <context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
-    </context-param>
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
 
-    <context-param>
-        <param-name>javax.faces.SKIP_COMMENTS</param-name>
-        <param-value>true</param-value>
-    </context-param>
+	<context-param>
+		<param-name>javax.faces.SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
-    <!-- Resource Mapping - resources will be served compressed and packed in production -->
-    <context-param>
-        <param-name>org.richfaces.resourceOptimization.enabled</param-name>
-        <param-value>true</param-value>
-    </context-param>
+	<!-- Resource Mapping - resources will be served compressed and packed in 
+		production -->
+	<context-param>
+		<param-name>org.richfaces.resourceOptimization.enabled</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+<!-- 	<context-param>
+		<param-name>db.url</param-name>
+		<param-value>jdbc:h2:tcp://localhost:9092/~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE</param-value>		
+	</context-param>
+	<context-param>
+		<param-name>db.user</param-name>
+		<param-value>sa</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db.password</param-name>
+		<param-value></param-value>
+	</context-param>
+	<context-param>
+		<param-name>db.tcpServer</param-name>
+		<param-value>-tcpAllowOthers</param-value>
+	</context-param>
+ -->
+<!-- 	<listener>
+		<listener-class>org.h2.server.web.DbStarter</listener-class>
+	</listener>
+ -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
 
-    <!-- Configurando o H2 para acessar o h2console em <servidor>:<porta>/<contexto>/h2 -->
-  <servlet>  
-    <servlet-name>H2Console</servlet-name>  
-    <servlet-class>org.h2.server.web.WebServlet</servlet-class>  
-    <init-param>  
-      <param-name>webAllowOthers</param-name>  
-      <param-value>true</param-value>  
-    </init-param>  
-    <load-on-startup>1</load-on-startup>  
-  </servlet>  
-  <servlet-mapping>  
-    <servlet-name>H2Console</servlet-name>  
-    <url-pattern>/h2/*</url-pattern>  
-  </servlet-mapping> 
+	<!-- Configurando o H2 para acessar o h2console em <servidor>:<porta>/<contexto>/h2 -->
+	<servlet>
+		<servlet-name>H2Console</servlet-name>
+		<servlet-class>org.h2.server.web.WebServlet</servlet-class>
+		
+		<init-param>
+			<param-name>webAllowOthers</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>H2Console</servlet-name>
+		<url-pattern>/h2/*</url-pattern>
+	</servlet-mapping>
 
-    <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
-    </welcome-file-list>
+	<welcome-file-list>
+		<welcome-file>faces/index.xhtml</welcome-file>
+	</welcome-file-list>
 
-    <login-config>
-        <auth-method>BASIC</auth-method>
-    </login-config>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
 
 </web-app>
