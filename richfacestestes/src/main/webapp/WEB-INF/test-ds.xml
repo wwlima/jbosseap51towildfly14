@@ -2,7 +2,7 @@
      <datasource jndi-name="java:jboss/datasources/TestDS"
       pool-name="test-datasource" enabled="true"
       use-java-context="true">
-          <connection-url>jdbc:h2:tcp://localhost/~/test;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+          <connection-url>jdbc:h2:tcp://localhost:9092/~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE</connection-url>
           <driver>h2</driver>
           <security>
                <user-name>sa</user-name>
